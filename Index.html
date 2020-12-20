@@ -1,0 +1,56 @@
+<style>
+ 
+video{
+    border: 1px solid #999999;
+    width: 98%;
+    max-width: 860px;
+}
+</style>
+ 
+<h1 style="text-align: center;">Biscord</h1>
+ 
+<button id="start">Start capture</button>
+ 
+<button id="stop">Stop capture</button>
+ 
+<video id="video" autoplay></video>
+ 
+<script>
+    const videoElement = document.getElementById("video")
+    const start = document.getElementById("start")
+    const stop = document.getElementById("stop")
+ 
+    var displayMediaOptions = {
+        video:{
+            cursor:'always'
+        },
+        audio:false 
+    }
+ 
+ 
+    start.addEventListener("click",function(e){
+        startCapture()
+    })
+ 
+    stop.addEventListener("Click", function(e){
+        stopCapture()
+    })
+ 
+    async function startCapture(){
+ 
+        try{
+    
+            videoElement.srcObject = await navigator.mediaDevices.getUserMedia(displayMediaOptions)
+ 
+ 
+        }catch(err){
+            console.error("Error"+ err)
+        }
+ 
+    }
+ 
+    function StopCapture(e){
+ 
+    }
+ 
+</script>
