@@ -30,17 +30,17 @@ video{
  
     start.addEventListener("click",function(e){
         startCapture()
-    })
+    }, false)
  
     stop.addEventListener("Click", function(e){
         stopCapture()
-    })
+    }, false)
  
     async function startCapture(){
  
         try{
                                                //Device = Screen - User = Camara
-            videoElement.srcObject = await navigator.mediaDevices.getUserMedia(displayMediaOptions)
+            videoElement.srcObject = await navigator.mediaDevices.getDeviceMedia(displayMediaOptions)
  
  
         }catch(err){
