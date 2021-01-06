@@ -39,8 +39,8 @@ video{
     async function startCapture(){
  
         try{
-    
-            videoElement.srcObject = await navigator.mediaDevices.getUserMedia(displayMediaOptions)
+                        //Display is to see screen and User is to use camara
+            videoElement.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions)
  
  
         }catch(err){
