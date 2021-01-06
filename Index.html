@@ -25,17 +25,18 @@ video{
             cursor:'always'
         },
         audio:true
-    }
+    } 
+    stop.addEventListener("Click", function(e){
+        stopCapture()
+    })
+ 
  
  
     start.addEventListener("click",function(e){
         startCapture()
     })
  
-    stop.addEventListener("Click", function(e){
-        stopCapture()
-    })
- 
+   
     async function startCapture(){
  
         try{
