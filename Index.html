@@ -40,7 +40,7 @@ video{
  
         try{
     
-            videoElement.srcObject = await navigator.mediaDevices.getDeviceMedia(displayMediaOptions)
+            videoElement.srcObject = await navigator.mediaDevices.getUserMedia(displayMediaOptions)
  
  
         }catch(err){
