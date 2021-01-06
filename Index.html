@@ -25,21 +25,22 @@ video{
             cursor:'always'
         },
         audio:true
-    } 
-   
+    }
+ 
+ 
     start.addEventListener("click",function(e){
         startCapture()
-    },false)
+    })
  
     stop.addEventListener("Click", function(e){
         stopCapture()
-    },false)
+    })
  
     async function startCapture(){
  
         try{
-                        //Display is to see screen and User is to use camara
-            videoElement.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions)
+    
+            videoElement.srcObject = await navigator.mediaDevices.getUserMedia(displayMediaOptions)
  
  
         }catch(err){
@@ -48,12 +49,13 @@ video{
  
     }
  
-    function StopCapture(e){
-          let tracks = videoElement.srcObject.getTracks()
-          
-          Tracks.forEach(track => track.stop())
+    function Stopfunction StopCapture(e){ 
+     let tracks = videoElement.srcObject.getTracks() 
      
-          videoElement.srcObject = null
+     tracks.forEach(track => track.stop()) 
+     
+     videoElement.srcObject = nullCapture(e){
     }
  
 </script>
+
