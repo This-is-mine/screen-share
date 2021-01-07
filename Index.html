@@ -1,57 +1,56 @@
 <style>
- 
+
 video{
     border: 1px solid #999999;
     width: 98%;
     max-width: 860px;
 }
 </style>
- 
+
 <h1 style="text-align: center;">Biscord</h1>
- 
+
 <button id="start">Start capture</button>
- 
+
 <button id="stop">Stop capture</button>
- 
+
 <video id="video" autoplay></video>
- 
+
 <script>
     const videoElement = document.getElementById("video")
     const start = document.getElementById("start")
     const stop = document.getElementById("stop")
- 
+
     var displayMediaOptions = {
         video:{
             cursor:'always'
         },
-        audio:true
+        audio:false 
     }
- 
- 
+
+
     start.addEventListener("click",function(e){
         startCapture()
-    }, false)
- 
+    })
+
     stop.addEventListener("Click", function(e){
         stopCapture()
-    }, false)
- 
+    })
+
     async function startCapture(){
- 
+
         try{
-                                               //Device = Screen - User = Camara
+
             videoElement.srcObject = await navigator.mediaDevices.getDeviceMedia(displayMediaOptions)
- 
- 
+
+
         }catch(err){
             console.error("Error"+ err)
         }
- 
-    }
- 
-    function Stopfunction StopCapture(e){ 
-    
-    }
- 
-</script>
 
+    }
+
+    function StopCapture(e){
+
+    }
+
+</script>
